@@ -24,7 +24,39 @@
   width: 100%;
   position: relative;
   overflow: hidden;
-
+  
+  .jg-entry-last[data-jg-remaining] {
+	&:before {
+	  position: absolute;
+	  content: "";
+	  display: block;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(0, 0, 0, 0.8);
+	  z-index: 1;
+	}
+	&:after {
+	  position: absolute;
+	  content: "+" attr(data-jg-remaining);
+	  font-size: 25px;
+	  display: block;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate3d(-50%, -50%, 0);
+	  right: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 20px;
+	  text-align: center;
+	  color: white;
+	  z-index: 2;
+	}
+  }
+  
   > a, > div {
     position: absolute;
     display: inline-block;
@@ -80,7 +112,7 @@
       .transition(opacity);
     }
   }
-
+  
   > .jg-filtered {
     display: none;
   }
